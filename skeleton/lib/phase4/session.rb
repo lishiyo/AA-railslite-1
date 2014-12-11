@@ -8,11 +8,8 @@ module Phase4
     def initialize(req)
       cookie = req.cookies.find {|c| c.name == '_rails_lite_app'}
       p cookie
-      if cookie.nil?
-        
-      else
-        cookie = {}
-      end
+      cookie = cookie.nil? ? {} : JSON.parse(cookie.value)
+
 
     end
 
