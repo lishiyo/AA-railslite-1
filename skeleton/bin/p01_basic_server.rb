@@ -10,7 +10,7 @@ server = WEBrick::HTTPServer.new(:Port => 3000)
 server.mount_proc("/") do |req, res|
   path = req.path
   res.content_type = "text/text"
-  res.body = "#{path}"
+  res.body = "#{path} #{req.body}"
 end
 
 trap('INT') do

@@ -50,7 +50,7 @@ describe Phase6::Route do
     end
   end
 end
-
+#
 describe Phase6::Router do
   let(:req) { WEBrick::HTTPRequest.new(Logger: nil) }
   let(:res) { WEBrick::HTTPResponse.new(HTTPVersion: '1.0') }
@@ -104,7 +104,7 @@ describe Phase6::Router do
 
     it "adds a route when an http method method is called" do
       router = Phase6::Router.new
-      router.get Regexp.new("^/users$"), Phase6::ControllerBase, :index
+      router.get(Regexp.new("^/users$"), Phase6::ControllerBase, :index)
       router.routes.count.should == 1
     end
   end
